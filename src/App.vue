@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Header/>
+    <addTodo />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
+import addTodo from './components/AddToDo.vue';
 
 export default {
   name: 'app',
   components: {
     Header,
+    addTodo,
   },
 };
 </script>
