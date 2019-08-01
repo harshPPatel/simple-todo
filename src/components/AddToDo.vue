@@ -33,7 +33,7 @@ export default {
         this.error = '';
       } else {
         this.isValid = false;
-        this.error = 'Please enter valid input!';
+        this.error = this.task !== '' ? 'Please enter valid input!' : '';
       }
     },
     submitForm() {
@@ -70,6 +70,58 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
+    input,
+    button {
+      height: 50px;
+      border-radius: 100px;
+      outline: none;
+      border: none;
+      font-size: 20px;
+      font-family: "Muli", sans-serif;
+      font-weight: 700;
+    }
+
+    input {
+      background-color: #fff;
+      border: 4px solid #42CDE7;
+      color: #2E2E2E;
+      padding: 0 40px;
+      margin-right: 16px;
+
+      ::placeholder {
+        color: rgba(#2E2E2E, 0.1)
+      }
+    }
+
+    button {
+      cursor: pointer;
+      padding:  0 30px;
+      background-color: #42CDE7;
+      color: #fff;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+
+      &:hover {
+        opacity: 0.8;
+      }
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 24px;
+    margin: 10px 0 20px;
+  }
 </style>
