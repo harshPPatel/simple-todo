@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitForm">
-    <input type="text" name="todo" id="todo_input" placeholder="Enter Your Task Here...">
+    <input type="text" name="todo" id="todo_input" placeholder="Enter Your Task Here..." required>
     <button type="submit">Add New Task</button>
   </form>
 </template>
@@ -16,8 +16,11 @@ export default {
     },
     submitForm(e) {
       if (this.isValid()) {
+        // Check if uuid already exists in localstorage or not
         e.target.todo.value = '';
         console.log(uuid());
+      } else {
+        // Show error message to screen!
       }
     },
   },

@@ -1,14 +1,17 @@
 <template>
   <ul>
-    <li>Task 1</li>
-    <li>Task 2</li>
-    <li>Task 3</li>
+    <ToDo v-for="todo in todos" :key="todo.id" :todo="todo" />
   </ul>
 </template>
 
 <script>
-export default {
+import ToDo from './ToDo.vue';
 
+export default {
+  props: ['todos'],
+  components: {
+    ToDo,
+  },
 };
 </script>
 

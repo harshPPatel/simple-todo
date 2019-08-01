@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <AddTodo />
-    <ToDoList />
+    <ToDoList :todos="this.todos" />
   </div>
 </template>
 
@@ -23,18 +23,28 @@ export default {
       this.todos = [
         {
           id: 1,
-          todo: 'task1',
-          isComplete: false,
+          task: 'task1',
+          isCompleted: false,
         },
         {
           id: 2,
-          todo: 'task2',
-          isComplete: false,
+          task: 'task2',
+          isCompleted: false,
         },
         {
           id: 3,
-          todo: 'task3',
-          isComplete: false,
+          task: 'task3',
+          isCompleted: false,
+        },
+        {
+          id: 4,
+          task: 'task3',
+          isCompleted: false,
+        },
+        {
+          id: 5,
+          task: 'task3',
+          isCompleted: false,
         },
       ];
     }
