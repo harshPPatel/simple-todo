@@ -1,6 +1,10 @@
 <template>
   <ul>
-    <ToDo v-for="todo in todos" :key="todo.id" :todo="todo" />
+    <ToDo
+      v-for="todo in todos"
+      :key="todo.id"
+      :todo="todo"
+      v-on:deleteTodo ="$emit('deleteTodo', todo.id)" />
   </ul>
 </template>
 
