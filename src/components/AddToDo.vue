@@ -43,7 +43,8 @@ export default {
 
         // Checking if the unique id already exists in localStorage todos or not
         if (localStorage.getItem('todos')) {
-          localStorage.getItem('todos').forEach((todo) => {
+          const todos = JSON.parse(localStorage.getItem('todos'));
+          todos.forEach((todo) => {
             if (todo.id === id) {
               // If exists, creaeting new unique id
               id = uuid();

@@ -8,12 +8,17 @@
     <link href="https://fonts.googleapis.com/css?family=Aladin|Muli:400i,600&display=swap" rel="stylesheet">
     <title>Simple ToDo App</title>
   </head>
-  <body>
+  <body id="particles">
     <noscript>
       <strong>We're sorry but 'Simple ToDo App' doesn't work properly
         without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <div id="app"></div>
+    <script>
+      // Particle JS Config
+      particlesJS.load('particles', './particlesjs-config.json');
+    </script>
     <!-- built files will be auto injected -->
   </body>
 </html>

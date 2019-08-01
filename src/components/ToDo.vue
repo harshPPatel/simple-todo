@@ -1,6 +1,11 @@
 <template>
   <li>
-    <input type="checkbox" name="isTodoDone" :id="todo.id" :checked="todo.isCompleted">
+    <input
+      type="checkbox"
+      name="isTodoDone"
+      :id="todo.id"
+      :checked="todo.isCompleted"
+      @change="$emit('complete-todo', todo.id)">
     <label :for="todo.id">{{ todo.task }}</label>
     <button @click="$emit('deleteTodo', todo.id)">
       <img src="../assets/cross.png" alt="cross">
