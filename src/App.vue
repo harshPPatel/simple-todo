@@ -1,19 +1,48 @@
 <template>
   <div id="app">
     <Header/>
-    <addTodo />
+    <AddTodo />
+    <ToDoList />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
-import addTodo from './components/AddToDo.vue';
+import AddTodo from './components/AddToDo.vue';
+import ToDoList from './components/ToDoList.vue';
 
 export default {
   name: 'app',
+  data: () => ({
+    todos: [],
+  }),
+  created() {
+    if (localStorage.getItem('todos')) {
+      this.todos = localStorage.getItem('todos');
+    } else {
+      this.todos = [
+        {
+          id: 1,
+          todo: 'task1',
+          isComplete: false,
+        },
+        {
+          id: 2,
+          todo: 'task2',
+          isComplete: false,
+        },
+        {
+          id: 3,
+          todo: 'task3',
+          isComplete: false,
+        },
+      ];
+    }
+  },
   components: {
     Header,
-    addTodo,
+    AddTodo,
+    ToDoList,
   },
 };
 </script>

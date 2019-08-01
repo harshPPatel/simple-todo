@@ -6,15 +6,18 @@
 </template>
 
 <script>
+import uuid from 'uuid/v1';
+
 export default {
   methods: {
     isValid() {
       console.log('Hi from addTodo Component');
-      return false;
+      return true;
     },
     submitForm(e) {
       if (this.isValid()) {
         e.target.todo.value = '';
+        console.log(uuid());
       }
     },
   },
