@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <AddTodo />
+    <AddTodo v-on:addTodo="addTodo" />
     <ToDoList :todos="this.todos" />
   </div>
 </template>
@@ -53,6 +53,11 @@ export default {
     Header,
     AddTodo,
     ToDoList,
+  },
+  methods: {
+    addTodo(todo) {
+      this.todos = [...this.todos, todo];
+    },
   },
 };
 </script>
