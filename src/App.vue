@@ -6,10 +6,6 @@
       :todos="this.todos"
       v-on:deleteTodo="deleteTodo"
       v-on:complete-todo="completeTodo" />
-    <footer>
-      Made with 💓.
-      <a href="https://github.com/harshPPatel/simple-todo" target="_blank"> Go to GitHub</a>
-    </footer>
   </div>
 </template>
 
@@ -90,9 +86,15 @@ export default {
 
 body {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
   font-size: 20px;
+  min-height: 900px;
+
+  @media (max-width: 375px) {
+    font-size: 16px;
+    min-height: 700px;
+  }
 }
 #app {
   font-family: "Muli", Helvetica, Arial, sans-serif;
@@ -105,6 +107,20 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
+}
+
+footer {
+  font-family: 'Muli', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  position: absolute;
+  right: 40px;
+  bottom: 24px;
+  text-align: right;
 }
 
 </style>

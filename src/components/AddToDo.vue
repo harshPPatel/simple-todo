@@ -77,6 +77,19 @@ export default {
     justify-content: center;
     width: 100%;
 
+    @media (max-width: 550px) {
+      flex-direction: column;
+      margin-bottom: 32px;
+      input,
+      button {
+        width: 80%;
+      }
+      input {
+        margin-bottom: 10px;
+        margin-right: 0!important;
+      }
+    }
+
     input,
     button {
       height: 50px;
@@ -86,6 +99,10 @@ export default {
       font-size: 20px;
       font-family: "Muli", sans-serif;
       font-weight: 700;
+
+      @media (max-width: 375px) {
+        height: 45px;
+      }
     }
 
     input {

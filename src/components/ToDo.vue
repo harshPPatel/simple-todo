@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li :class="{ completed: todo.isCompleted }">
     <input
       type="checkbox"
       name="isTodoDone"
@@ -20,11 +20,43 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/* Bind class with the value of todo.isCompleted */
 button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 100%;
+  background-color: transparent;
   img {
     height: 24px;
     width: auto;
+  }
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  border-bottom: 1px solid rgba(#2E2E2E, 0.25);
+  color: #2E2E2E;
+  padding: 10px 0;
+
+  &.completed {
+    label {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+  }
+
+  input,
+  button {
+    width: 10%;
+  }
+  label {
+    width: 80%;
+    cursor: pointer;
   }
 }
 </style>
