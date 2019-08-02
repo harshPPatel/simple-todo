@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "simple-todo",
+  "builds": [{ "src": "dist/**", "use": "@now/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "dist/$1" }],
+  "alias": ["simple-to-do.now.sh"]
+}
